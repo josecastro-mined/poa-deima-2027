@@ -19,7 +19,7 @@ def cargar_datos():
             
         client = gspread.authorize(creds)
         sheet_id = "1So31pUIdsVC3F6emRZB9fphqeaUgXJrNoBltyWe_7wo"
-        sheet = client.open_by_key(sheet_id).worksheet("POA 2027")
+        sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1So31pUIdsVC3F6emRZB9fphqeaUgXJrNoBltyWe_7wo/edit?gid=297853090#gid=297853090").worksheet("POA 2027")
         datos = sheet.get_all_records()
         df = pd.DataFrame(datos)
         return df.astype(str)
