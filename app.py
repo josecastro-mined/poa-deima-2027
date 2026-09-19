@@ -16,7 +16,7 @@ def cargar_datos():
         else:
             st.error("No se encontraron las credenciales en st.secrets.")
             return pd.DataFrame()
-            
+
         client = gspread.authorize(creds)
         sheet_id = "1So31pUIdsVC3F6emRZB9fphqeaUgXJrNoBltyWe_7wo"
         sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1So31pUIdsVC3F6emRZB9fphqeaUgXJrNoBltyWe_7wo/edit?gid=297853090#gid=297853090").worksheet("POA 2027")
